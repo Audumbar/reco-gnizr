@@ -1,0 +1,25 @@
+#This page describes the system requirements.
+
+
+1. Web widget can be embedded in any web page.
+2. Widget should suggest bookmarks related to the context of page.
+3. Widget should allow user to provide feedback on the relevance of the suggested bookmarks.
+   User can vote to "sink" a bookmark. User can also rate a bookmark on the scale of 5.
+4. The maximum number of bookmarks that are displayed is configurable.
+5. Widget will contain collapsible list of bookmarks
+6. The system should be scalable to manage sufficiently large number of requests
+7. Widget will display popularity and recentness of the suggested bookmarks
+
+
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
