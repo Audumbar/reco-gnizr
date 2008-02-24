@@ -1,0 +1,17 @@
+#summary Project description
+= Introduction =
+
+Reco-gnizr : Create a Web Widget using gnizr data for bookmark recommendation
+
+
+= Details =
+
+
+Develop a JavaScript widget that can be embedded in any Web page to recommend bookmarks. The use
+of this widget is similar to which of the Google AdSense. Instead of recommended targeted ads,
+widget will recommend bookmarks to the readers.
+
+Things to consider:
+ * How do you decide what bookmarks to recommend?
+ * Do you need to perform content scraping? When and how?
+ * Do you allow readers to give feedbacks on the quality of the current recommendation?
