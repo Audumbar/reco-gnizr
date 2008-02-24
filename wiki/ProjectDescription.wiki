@@ -1,4 +1,5 @@
 #summary Project description
+#labels Featured
 = Introduction =
 
 Reco-gnizr : Web Widget using gnizr data for bookmark recommendation
