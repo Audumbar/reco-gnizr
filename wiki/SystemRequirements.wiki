@@ -1,5 +1,10 @@
-#This page describes the system requirements.
+#
 
+= Introduction =
+
+This page describes the system requirements.
+
+= Details =
 
 1. Web widget can be embedded in any web page.
 2. Widget should suggest bookmarks related to the context of page.
@@ -9,17 +14,3 @@
 5. Widget will contain collapsible list of bookmarks
 6. The system should be scalable to manage sufficiently large number of requests
 7. Widget will display popularity and recentness of the suggested bookmarks
-
-
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
