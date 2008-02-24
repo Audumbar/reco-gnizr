@@ -7,4 +7,4 @@ High level architecture of the system
 
 
 = Details =
-
+http://reco-gnizr.googlecode.com/files/RecognizrArch.jpg
