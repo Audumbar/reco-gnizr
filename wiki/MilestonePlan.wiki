@@ -19,5 +19,5 @@ A list of milestones for the project
  * Implementation of Web widget
  * Deployment
  * Testing
- * Documentation
+ * Demonstration
         
