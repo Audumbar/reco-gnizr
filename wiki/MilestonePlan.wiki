@@ -1,4 +1,4 @@
-#A list of milestones for the project
+# A list of milestones for the project
 
 = Introduction =
 
