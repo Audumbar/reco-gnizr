@@ -1,3 +1,5 @@
+#summary This page describes the system requirements.
+
 = Introduction =
 
 This page describes the system requirements.
