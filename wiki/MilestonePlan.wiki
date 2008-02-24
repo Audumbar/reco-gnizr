@@ -1,4 +1,4 @@
-#A list of milestones for the project
+#summary A list of milestones for the project
 
 = Introduction =
 A list of milestones for the project
@@ -6,3 +6,16 @@ A list of milestones for the project
 
 
 = Details =
+
+ * Study of similar existing applications
+ * Decide System requirements/Features
+ * Finalize High level architecture
+ * Application Design
+ * Low level design
+ * Decide test cases
+ * Implementation of server modules
+ * Implementation of Web widget
+ * Deployment
+ * Testing
+ * Documentation
+        
