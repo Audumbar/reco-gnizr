@@ -1,4 +1,5 @@
 #summary A list of milestones for the project
+#labels Featured
 
 = Introduction =
 A list of milestones for the project
