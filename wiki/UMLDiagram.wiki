@@ -5,4 +5,4 @@ This page contains use case diagrams for reco-gnizr.
 
 = Details =
 
-http://code.google.com/images/code_sm.png
+http://code.google.com/images/UML1.jpg
