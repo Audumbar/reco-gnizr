@@ -1,4 +1,5 @@
 #summary This page describes the system requirements.
+#labels Featured
 
 = Introduction =
 
