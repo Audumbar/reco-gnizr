@@ -11,9 +11,8 @@ A list of milestones for the project
  * Study of similar existing applications
  * Study of gnizr framework and technology[Java, Tomcat]
  * Decide System requirements/Features
- * Finalize High level architecture
- * Application Design
- * Low level design
+ * System architecture
+ * Application Design - High level and low level design
  * Decide test cases
  * Implementation of server modules
  * Implementation of Web widget
