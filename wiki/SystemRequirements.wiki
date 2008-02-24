@@ -1,16 +1,14 @@
-#
-
 = Introduction =
 
 This page describes the system requirements.
 
 = Details =
 
-1. Web widget can be embedded in any web page.
-2. Widget should suggest bookmarks related to the context of page.
-3. Widget should allow user to provide feedback on the relevance of the suggested bookmarks.
+* Web widget can be embedded in any web page.
+* Widget should suggest bookmarks related to the context of page.
+* Widget should allow user to provide feedback on the relevance of the suggested bookmarks.
    User can vote to "sink" a bookmark. User can also rate a bookmark on the scale of 5.
-4. The maximum number of bookmarks that are displayed is configurable.
-5. Widget will contain collapsible list of bookmarks
-6. The system should be scalable to manage sufficiently large number of requests
-7. Widget will display popularity and recentness of the suggested bookmarks
+* The maximum number of bookmarks that are displayed is configurable.
+* Widget will contain collapsible list of bookmarks
+* The system should be scalable to manage sufficiently large number of requests
+* Widget will display popularity and recentness of the suggested bookmarks
