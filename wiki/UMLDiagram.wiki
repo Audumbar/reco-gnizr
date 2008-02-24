@@ -4,5 +4,6 @@
 This page contains use case diagrams for reco-gnizr.
 
 = Details =
+USE CASE DIAGRAM:
 
 http://reco-gnizr.googlecode.com/files/UML1.jpg
