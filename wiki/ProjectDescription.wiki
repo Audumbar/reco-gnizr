@@ -15,3 +15,4 @@ Things to consider:
  * How do you decide what bookmarks to recommend?
  * Do you need to perform content scraping? When and how?
  * Do you allow readers to give feedbacks on the quality of the current recommendation?
+ * Configurable features for the users
