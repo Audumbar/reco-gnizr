@@ -1,4 +1,5 @@
 #summary this page describes Design of the application.
+#labels Featured
 
 = Introduction =
 
