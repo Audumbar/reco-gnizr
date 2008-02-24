@@ -1,7 +1,7 @@
 #summary Project description
 = Introduction =
 
-Reco-gnizr : Create a Web Widget using gnizr data for bookmark recommendation
+Reco-gnizr : Web Widget using gnizr data for bookmark recommendation
 
 
 = Details =
