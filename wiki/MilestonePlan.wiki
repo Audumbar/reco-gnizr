@@ -9,6 +9,7 @@ A list of milestones for the project
 = Details =
 
  * Study of similar existing applications
+ * Study of gnizr framework
  * Decide System requirements/Features
  * Finalize High level architecture
  * Application Design
