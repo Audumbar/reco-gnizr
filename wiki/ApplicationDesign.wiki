@@ -1,9 +1,10 @@
-#summary this page describes Design of the application.
+#summary this page describes Low level Design of the application.
 #labels Featured
 
 = Introduction =
 
-Application Design
+Application Design:
+High level design is available on System architecture page.
 
 
 = Details =
