@@ -7,7 +7,7 @@ A list of milestones for the project
 
 
 = Details =
-*Milestone 1* <br>
+*Milestone 1* 
 2008-02-11 to 2008-03-10
  * Study of similar existing applications
  * Study of gnizr framework and technology[Java, Tomcat]
@@ -19,18 +19,18 @@ A list of milestones for the project
  * Define layout of web widget
  * Define interface between web widget and backend
  * Decide test cases
-Milestone 3
+*Milestone 3*
 2008-03-24 to 2008-04-14
  * Implementation of server modules
  * Implementation of Web widget
-Milestone 4
+*Milestone 4*
 2008-04-14 to 2008-04-21
  * Integration of various modules
-Milestone 4
+*Milestone 5*
 2008-04-21 to 2008-05-12
  * Deployment
  * Testing
-Milestone 5
+*Milestone 6*
 2008-05-12 to 2008-05-16
  * Demonstration
  * Documentation
