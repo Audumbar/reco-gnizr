@@ -7,7 +7,7 @@ A list of milestones for the project
 
 
 = Details =
-*Milestone 1*
+*Milestone 1* <br>
 2008-02-11 to 2008-03-10
  * Study of similar existing applications
  * Study of gnizr framework and technology[Java, Tomcat]
