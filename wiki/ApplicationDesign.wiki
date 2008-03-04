@@ -4,7 +4,7 @@
 = Introduction =
 
 Application Design:
-High level design is available on System architecture page.
+High level design is available on SystemArchitecture page.
 
 
 = Details =
