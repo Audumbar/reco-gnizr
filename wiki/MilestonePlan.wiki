@@ -25,7 +25,7 @@ A list of milestones for the project
     # Audumbar - interface between web widget and backend,
     # Audumbar - server component for web content analysis,
     # Uday - user feedback manager at server,
-    # Uday - bookmark retriever an interface to gnizr bookmarks database.
+    # Uday - bookmark retriever, an interface to gnizr bookmarks database.
  * Implementation of Web widget
     # Kishor - Client UI layout with URLs and user feedback options,
     # Kishor - client component for Web content scraping
