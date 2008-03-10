@@ -11,7 +11,7 @@ USE CASE diagram is available on UMLDiagram page.
 = Details =
 
 Detailed Design will consist of following components:
- * UI layout displaying URLs with user feedback options
+ * client UI layout displaying URLs with user feedback options
  * client component for Web content scraping,
  * server component for web content analysis,
  * user feedback manager at server,
