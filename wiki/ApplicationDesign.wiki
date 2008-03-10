@@ -14,9 +14,10 @@ Detailed Design will consist of following components:
  * client UI layout displaying URLs with user feedback options,
  * client component for Web content scraping,
     This component returns the essential HTML content of client webpage.
+ * server component that interfaces with the client web page,
  * server component for web content analysis,
     This component extracts the meta information out of the parsed HTML content from client page.
  * bookmark retriever an interface to gnizr bookmarks database,
-    Retrieves the bookmarks based on the meta information generated
+    It retrieves the bookmarks from gnizr database based on the meta information generated.
  * user feedback manager at server,
-    It updates rating of the bookmark in the database
+    It updates rating of the bookmark in the database.
