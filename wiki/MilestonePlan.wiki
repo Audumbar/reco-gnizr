@@ -16,20 +16,30 @@ A list of milestones for the project
  * Application Design - High level and low level design
 == Milestone 2 ==
 === 2008-03-10 to 2008-03-24 ===
- * Define layout of web widget
- * Define interface between web widget and backend
- * Decide test cases
+ * Discuss and Define layout of web widget
+ * Discuss and Define interface between web widget and backend
+ * Discuss and Decide test cases and generate test case data.
 == Milestone 3 ==
 === 2008-03-24 to 2008-04-14 ===
  * Implementation of server modules
+    # Audumbar - interface between web widget and backend,
+    # Audumbar - server component for web content analysis,
+    # Uday - user feedback manager at server,
+    # Uday - bookmark retriever an interface to gnizr bookmarks database.
  * Implementation of Web widget
+    # Kishor - Client UI layout with URLs and user feedback options,
+    # Kishor - client component for Web content scraping
+ * Unit Testing
 == Milestone 4 ==
 === 2008-04-14 to 2008-04-21 ===
  * Integration of various modules
+   # Audumbar - integration of server side components
+   # kishor - integration of client side components
+ * Integration Testing
 == Milestone 5 ==
 === 2008-04-21 to 2008-05-12 ===
- * Deployment
- * Testing
+ * Deployment - Uday
+ * Testing - Uday
 == Milestone 6 ==
 === 2008-05-12 to 2008-05-16 ===
  * Demonstration
