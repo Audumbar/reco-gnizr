@@ -1,4 +1,4 @@
-#summary this page describes Low level Design of the application.
+#summary this page describes detailed Design of the application.
 #labels Featured
 
 = Introduction =
@@ -8,3 +8,5 @@ High level design is available on SystemArchitecture page.
 
 
 = Details =
+
+USE CASE diagram is available on UMLDiagram page
