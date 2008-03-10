@@ -9,4 +9,4 @@ High level design is available on SystemArchitecture page.
 
 = Details =
 
-USE CASE diagram is available on UMLDiagram page
+USE CASE diagram is available on UMLDiagram page.
