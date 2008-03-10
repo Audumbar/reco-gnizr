@@ -10,4 +10,9 @@ USE CASE diagram is available on UMLDiagram page.
 
 = Details =
 
-USE CASE diagram is available on UMLDiagram page.
+Detailed Design will consist of following components:
+ * UI layout displaying URLs with user feedback options
+ * client component for Web content scraping,
+ * server component for web content analysis,
+ * user feedback manager at server,
+ * bookmark retriever an interface to gnizr bookmarks database.
