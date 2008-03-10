@@ -10,7 +10,7 @@ USE CASE diagram is available on http://code.google.com/p/reco-gnizr/wiki/UMLDia
 
 = Details =
 
-Detailed Design will consist of following components:
+Detailed Design consists of following components:
  * client UI layout displaying URLs with user feedback options,
  * client component for Web content scraping,
     This component returns the essential HTML content of client webpage.
