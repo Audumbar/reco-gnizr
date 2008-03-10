@@ -11,8 +11,12 @@ USE CASE diagram is available on http://code.google.com/p/reco-gnizr/wiki/UMLDia
 = Details =
 
 Detailed Design will consist of following components:
- * client UI layout displaying URLs with user feedback options
+ * client UI layout displaying URLs with user feedback options,
  * client component for Web content scraping,
+    This component returns the essential HTML content of client webpage.
  * server component for web content analysis,
+    This component extracts the meta information out of the parsed HTML content from client page.
+ * bookmark retriever an interface to gnizr bookmarks database,
+    Retrieves the bookmarks based on the meta information generated
  * user feedback manager at server,
- * bookmark retriever an interface to gnizr bookmarks database.
+    It updates rating of the bookmark in the database
