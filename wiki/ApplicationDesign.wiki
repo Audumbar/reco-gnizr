@@ -6,7 +6,7 @@
 Application Design:
 High level design is available on SystemArchitecture page.
 
-USE CASE diagram is available on UMLDiagram page.
+USE CASE diagram is available on http://code.google.com/p/reco-gnizr/wiki/UMLDiagram page.
 
 = Details =
 
