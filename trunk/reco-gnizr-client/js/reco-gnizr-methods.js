@@ -57,3 +57,7 @@ function getXmlHttpObject()
   return xmlHttp;
 }
 
+function delay(n)
+{
+  for(var i=0; i<n*500; i++);
+}
