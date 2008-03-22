@@ -1,8 +1,26 @@
+/* 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Title : Reco-gnizr frame content creator
+Author : Kishor Datar
+URL : 
+
+Description : this file gets bookmarks from the server and places them into
+              the widget
+
+Created : see svn
+Modified : see svn
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/
+
 MAX_BOOKMARKS = 4;
 bookmarks = null;
+xmlHttp = null;
+bookmarkSource = "../test/reco-gnizr-get-bookmarks.html";
 
 
-function attachHtml(bookmark, style, container)
+function attachHtml(bookmark, style, container, hidden)
 {
   switch (style)
   {
@@ -13,6 +31,8 @@ function attachHtml(bookmark, style, container)
       var dn = document.createElement("img");
       var a1 = document.createElement("a");
       var a2 = document.createElement("a");
+      var span1 = document.createElement("span"); // text "Rating : "
+      var span2 = document.createElement("span"); // rating
       
       a1.href = "#";
       a1.addEventListener("click", function (){return false}, false);
@@ -27,12 +47,23 @@ function attachHtml(bookmark, style, container)
       dn.thumbsup = false;
       up.border = 0;
       dn.border = 0;
-      
+      span1.style.color = "#000888;";
+      span2.style.color = "#000FFF;";
+      span1.innerText = span1.innerHTML = span1.innerHtml = "Rating : ";
+      span2.innerText = span2.innerHTML = span2.innerHtml = bookmark.rating;      
+
       a1.appendChild(up);
       a2.appendChild(dn);
       div.appendChild(a);
       div.appendChild(a1);
       div.appendChild(a2);
+      div.appendChild(span1);
+      div.appendChild(span2);
+      
+      div["bookmark"] = bookmark; // save reference to the bookmark object here
+      
+      if(hidden)
+        div.style.display = "none";
       
       container.appendChild(div);
   }
@@ -41,13 +72,30 @@ function attachHtml(bookmark, style, container)
 function displayBookmarks(bookmarks)
 {
   var div = document.getElementById("bookmark_container");
+  hidden = false;
   for(var i=0; i<bookmarks.length; i++)
   {
-    if(MAX_BOOKMARKS == i)
-      break;
-    attachHtml(bookmarks[i], "square", div);
+    if(MAX_BOOKMARKS <= i)
+      hidden = true;
+    attachHtml(bookmarks[i], "square", div, hidden);
   }
   bookmarksLoaded();
+}
+
+
+function sortBookmarks(bookmarks)
+{
+  var temp = null;
+  for (var i=0; i<bookmarks.length; i++){
+    for (var j=i+1; j<bookmarks.length; j++){
+      if(bookmarks[i]["rating"] < bookmarks[j]["rating"])
+      {
+        temp = bookmarks[i];
+        bookmarks[i] = bookmarks[j];
+        bookmarks[j] = temp;
+      }
+    }
+  }  
 }
 
 function gotBookmarks ()
@@ -59,6 +107,7 @@ function gotBookmarks ()
       var code = "obj = " + xmlHttp.responseText + "";
       eval(code);
       bookmarks = obj.bookmarks;
+      sortBookmarks(bookmarks);
       displayBookmarks(bookmarks);
     }
     catch (e)
@@ -71,9 +120,6 @@ function gotBookmarks ()
   }
 }
 
-xmlHttp = null;
-bookmarkSource = "../test/reco-gnizr-get-bookmarks.html";
-
 function loadBookmarks ()
 {
   var url = getRootDirectory() + bookmarkSource;
@@ -83,37 +129,4 @@ function loadBookmarks ()
   xmlHttp.send(null);
 }
 
-
 loadBookmarks ();
-
-
-function getXmlHttpObject()
-{
-  var xmlHttp;
-  try
-  {
-    // Firefox, Opera 8.0+, Safari
-    xmlHttp=new XMLHttpRequest();
-  }
-  catch (e)
-  {
-    // Internet Explorer
-    try
-    {
-      xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-    }
-    catch (e)
-    {
-      try
-      {
-        xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      catch (e)
-      {
-        alert("Your browser does not support AJAX!");
-        return null;
-      }
-    }
-  }
-  return xmlHttp;
-}

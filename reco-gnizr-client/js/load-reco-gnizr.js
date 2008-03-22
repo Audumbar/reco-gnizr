@@ -1,3 +1,19 @@
+/* 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Title : Reco-gnizr iframe loader
+Author : Kishor Datar
+URL : 
+
+Description : This file is included in the user pages. This fetched the
+              bookmark iframe
+
+Created : see svn
+Modified : see svn
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/
+
 var thisElement = document.getElementById("recognizrscript");
 recognizrFrame = document.createElement("IFRAME");
 recognizrFrame.src = "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html?"
