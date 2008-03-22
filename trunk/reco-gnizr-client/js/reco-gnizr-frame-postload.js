@@ -13,6 +13,13 @@ Modified : see svn
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 */
 
+var resizex = 50;
+var resizey = 50;
+var oldx;
+var oldy;
+var urlToChangeRating = "../test/reco-gnizr-change-rating.html";
+var refreshAfter = 8;
+var nChanges= 0;
 
 function imgMouseOver(e)
 {
@@ -39,6 +46,8 @@ function adjustBookmarkVisibility(container)
     if(nxt["bookmark"])
     {
       i++;
+      nxt.style.display = "none";
+      nxt.style.pixelLeft += 100;
       if(i <= MAX_BOOKMARKS)
         nxt.style.display = "";
       else
@@ -106,6 +115,18 @@ function adjustBookmarkSequence (div, raise)
   adjustBookmarkVisibility(containerDiv);
 }
 
+// dRating is difference in rating i.e. +1 or -1
+function changeRating (bookmark, dRating)
+{
+  var xmlHttp = getXmlHttpObject();
+  var url = getRootDirectory() + urlToChangeRating + "?" + 
+                  "bookmark_id=" + escape(bookmark["id"]) + "&" +
+                  "change="+escape(dRating);
+  url = url.replace("+", "%2B");
+  xmlHttp.open("GET", url, false);
+  xmlHttp.send(null);
+}
+
 // image has attribute thumbsup attached to it. if true, it means it is 
 // thumbs up image else down
 function imgClick(e)
@@ -115,7 +136,11 @@ function imgClick(e)
   if(img.thumbsup)
   {
     if(div["bookmark"]["rating"] < 5)
+    {
       div["bookmark"]["rating"]++;
+      changeRating(div["bookmark"], "+1");
+      nChanges++;
+    }
     // TODO: bad practice! change the following two lines immediately
     span = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
     span.innerText = span.innerHTML = span.innerHtml = div["bookmark"].rating;
@@ -125,21 +150,21 @@ function imgClick(e)
   else
   {
     if(div["bookmark"]["rating"] > 0)
+    {
       div["bookmark"]["rating"]--;
+      changeRating(div["bookmark"], "-1");
+      nChanges++;
+    }
     // TODO: bad practice! change the following two lines immediately
     span = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
     span.innerText = span.innerHTML = span.innerHtml = div["bookmark"].rating;
     adjustBookmarkSequence(div, false); // raise
     imgMouseOut(null, img); // adjust the image size again
   }
+  
+  if (nChanges >= refreshAfter)
+    document.location.reload();
 }
-
-
-var resizex = 50;
-var resizey = 50;
-
-var oldx;
-var oldy;
 
 
 function bookmarksLoaded()
