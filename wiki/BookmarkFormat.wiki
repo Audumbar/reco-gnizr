@@ -1,6 +1,11 @@
 #labels Phase-Design
 The format for sending JSON data containing bookmarks to the client:
 
+The client widget first sends a request to reco-gnizr-get-bookmarks.html.
+reco-gnizr-get-bookmarks.html may take one of the two parameters
+  # url = url of the page on which widget is embedded. The server then has to fetch the actual url, parse the content and then recommend the bookmarks.
+  # content = content of the page on which widget is embedded. This involves a lot of traffic and thus not recommended. (Need to decide which format to use.)
+
   *  id is the identifier of the bookmark in the database
   *  link is the actual url
   *  It is recommended that the bookmarks be sorted in the descending order of their rating. 
