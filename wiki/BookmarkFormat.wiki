@@ -1,0 +1,23 @@
+The format for sending JSON data containing bookmarks to the client:
+
+  *  id is the identifier of the bookmark in the database
+  *  link is the actual url
+  *  It is recommended that the bookmarks be sorted in the descending order of their rating. 
+  *  Stick to the format given below, no extra commas or brackets else json will be broken
+
+{{{
+{
+  "bookmarks" : [
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark1", "rating": 4},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark2", "rating": 5},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark3", "rating": 3},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark4", "rating": 4},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark5", "rating": 2},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark6", "rating": 1},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark7", "rating": 3},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark8", "rating": 1},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark9", "rating": 1},
+    {"id": "anything", "link": "http://localhost/", "description": "bookmark10", "rating": 5}
+  ]
+};
+}}}
