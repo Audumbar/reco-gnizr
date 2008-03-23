@@ -35,9 +35,9 @@ function attachHtml(bookmark, style, container, hidden)
       var span2 = document.createElement("span"); // rating
       
       a1.href = "#";
-      a1.addEventListener("click", function (){return false}, false);
+      addEvent (a1, "click", function (){return false});
       a2.href = "#";
-      a2.addEventListener("click", function (){return false}, false);
+      addEvent (a2, "click", function (){return false});
       a.href = bookmark.link;
       a.target = "_blank";
       a.innerText = a.innerHTML = a.innerHtml = bookmark.description;
@@ -47,8 +47,8 @@ function attachHtml(bookmark, style, container, hidden)
       dn.thumbsup = false;
       up.border = 0;
       dn.border = 0;
-      span1.style.color = "#000888;";
-      span2.style.color = "#000FFF;";
+      span1.style.color = "000888";
+      span2.style.color = "000FFF";
       span1.innerText = span1.innerHTML = span1.innerHtml = "Rating : ";
       span2.innerText = span2.innerHTML = span2.innerHtml = bookmark.rating;      
 
@@ -64,7 +64,6 @@ function attachHtml(bookmark, style, container, hidden)
       
       if(hidden)
         div.style.display = "none";
-      
       container.appendChild(div);
   }
 }
@@ -113,6 +112,7 @@ function gotBookmarks ()
     catch (e)
     {
       alert(e);
+      throw e;
     }
   }
   else

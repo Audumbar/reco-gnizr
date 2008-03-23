@@ -23,7 +23,7 @@ var nChanges= 0;
 
 function imgMouseOver(e)
 {
-  img = this;
+  img = getEventTarget(this);
   img.width = oldx;
   img.height = oldy;
 }
@@ -31,7 +31,7 @@ function imgMouseOver(e)
 function imgMouseOut (e, img)
 {
   if(img == null)
-    img = this; // this event resulted due to actual mouse out
+    img = getEventTarget(this); // this event resulted due to actual mouse out
 
   img.width = oldx * (resizex/100);
   img.height = oldy * (resizex/100);
@@ -131,7 +131,7 @@ function changeRating (bookmark, dRating)
 // thumbs up image else down
 function imgClick(e)
 {
-  var img = this;
+  var img = getEventTarget(this);
   var div = img.parentNode.parentNode; // <div><a><img>
   if(img.thumbsup)
   {
@@ -176,13 +176,13 @@ function bookmarksLoaded()
   for (var i=0; i<imgs.length; i++)
   {
       var img = imgs[i];
-      img.style.paddingRight = "10px";
-      img.style.paddingLeft = "10px";
+      img.style.marginRight = "5px";
+      img.style.marginLeft  = "5px";
       img.align = "absmiddle";
       imgMouseOut(null, img);
-      img.addEventListener ("mouseover", imgMouseOver, false);
-      img.addEventListener ("mouseout", imgMouseOut, false);
-      img.addEventListener ("click", imgClick, false);
+      addEvent (img, "mouseover", imgMouseOver);
+      addEvent (img, "mouseout", imgMouseOut);
+      addEvent (img, "click", imgClick);
   }
 }
 
