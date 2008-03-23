@@ -1,0 +1,15 @@
+The interface between client and the server for updating the bookmark rating
+
+When the user rates the bookmark high or low, the client sends the following GET request
+to the server so that it can update the bookmark's rating.
+
+{{{
+reco-gnizr-change-rating.html?bookmark_id=ID_HERE&change=+1
+reco-gnizr-change-rating.html?bookmark_id=ID_HERE&change=-1
+}}}
+
+
+When change = +1, the bookmarks rating should go up.
+When it is -1 it goes down.
+
+Bookmark id is same as the one used in [http://code.google.com/p/reco-gnizr/wiki/BookmarkFormat BookmarkFormat]
