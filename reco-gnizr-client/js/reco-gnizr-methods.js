@@ -61,3 +61,38 @@ function delay(n)
 {
   for(var i=0; i<n*500; i++);
 }
+
+function getEventTarget (obj)
+{
+  if (obj.event) // test if event object is present
+     o = obj.event.srcElement;
+  else
+    o = obj;
+  return o;
+}
+
+
+function addEvent (object, e, method)
+{
+  if(!object || !e || !method)
+    return null;
+
+  var func = null;
+  if(object.attachEvent)
+  {
+    e = "on" + e; // click for mozilla is onclick for ie
+    func = "attachEvent";
+  }
+  else if(object.addEventListener)
+  {
+    func = "addEventListener";
+  }
+  else
+  {
+    return null;
+  }
+  object[func](e, method, false);
+
+  return object;
+}
+
