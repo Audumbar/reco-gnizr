@@ -1,3 +1,4 @@
+#labels Phase-Design
 The format for sending JSON data containing bookmarks to the client:
 
   *  id is the identifier of the bookmark in the database
