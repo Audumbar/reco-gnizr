@@ -14,16 +14,16 @@ reco-gnizr-get-bookmarks.html may take one of the two parameters
 {{{
 {
   "bookmarks" : [
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark1", "rating": 4},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark2", "rating": 5},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark3", "rating": 3},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark4", "rating": 4},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark5", "rating": 2},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark6", "rating": 1},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark7", "rating": 3},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark8", "rating": 1},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark9", "rating": 1},
-    {"id": "anything", "link": "http://localhost/", "description": "bookmark10", "rating": 5}
+    {"id": "anything", "link": "http://localhost1/", "description": "bookmark1", "rating": 4},
+    {"id": "anything", "link": "http://localhost2/", "description": "bookmark2", "rating": 5},
+    {"id": "anything", "link": "http://localhost3/", "description": "bookmark3", "rating": 3},
+    {"id": "anything", "link": "http://localhost4/", "description": "bookmark4", "rating": 4},
+    {"id": "anything", "link": "http://localhost5/", "description": "bookmark5", "rating": 2},
+    {"id": "anything", "link": "http://localhost6/", "description": "bookmark6", "rating": 1},
+    {"id": "anything", "link": "http://localhost7/", "description": "bookmark7", "rating": 3},
+    {"id": "anything", "link": "http://localhost8/", "description": "bookmark8", "rating": 1},
+    {"id": "anything", "link": "http://localhost9/", "description": "bookmark9", "rating": 1},
+    {"id": "anything", "link": "http://localhost10/", "description": "bookmark10", "rating": 5}
   ]
 };
 }}}
