@@ -123,7 +123,8 @@ function changeRating (bookmark, dRating)
                   "bookmark_id=" + escape(bookmark["id"]) + "&" +
                   "change="+escape(dRating);
   url = url.replace("+", "%2B");
-  xmlHttp.open("GET", url, false);
+  xmlHttp.onreadystatechange = function (){return true;}
+  xmlHttp.open("GET", url, true);
   xmlHttp.send(null);
 }
 
