@@ -78,7 +78,11 @@ function displayBookmarks(bookmarks)
       hidden = true;
     attachHtml(bookmarks[i], "square", div, hidden);
   }
-  bookmarksLoaded();
+  
+  // for some reason, when the cache was empty, the imgages would appear in
+  // small size. To avoid this, I had to wait for some time after images are
+  // loaded before I could resize them. Hence the following timeout.
+  window.setTimeout(bookmarksLoaded, "100");
 }
 
 
