@@ -1,5 +1,5 @@
 #summary Screenshots of the Bookmarks Webwidget.
-#labels screenshots
+#labels screenshots,Featured
 
 
 = Initial View: =
