@@ -24,8 +24,8 @@ var nChanges= 0;
 function imgMouseOver(e)
 {
   img = getEventTarget(this);
-  img.width = oldx;
-  img.height = oldy;
+  img.width = oldx / 1.5;
+  img.height = oldy / 1.5;
 }
 
 function imgMouseOut (e, img)
