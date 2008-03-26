@@ -1,0 +1,12 @@
+#summary Screenshots of the Bookmarks Webwidget.
+#labels screenshots
+
+
+= Initial View: =
+
+
+http://reco-gnizr.googlecode.com/files/Screen1.jpg
+
+= After User Feedback =
+
+http://reco-gnizr.googlecode.com/files/Screen2.jpg
