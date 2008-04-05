@@ -16,11 +16,11 @@ Modified : see svn
 
 var thisElement = document.getElementById("recognizrscript");
 recognizrFrame = document.createElement("IFRAME");
-recognizrFrame.src = "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html?"
-                      + document.location; // TODO: The whole url should not be sent
+recognizrFrame.setAttribute("src", 
+   "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html#bgcolor=#d9e6f7");
 
 recognizrFrame.style.border = "none";
 recognizrFrame.style.height = "150px";
 recognizrFrame.style.width = "250px"; 
-recognizrFrame.scrolling = "no";
+recognizrFrame.setAttribute("scrolling", "no");
 thisElement.parentNode.appendChild(recognizrFrame);
