@@ -11,7 +11,10 @@ Description : this file gets bookmarks from the server and places them into
 Created : see svn
 Modified : see svn
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Star image borrowed from
+http://www.flickr.com/photos/eggie/323587586/ 
 */
 
 MAX_BOOKMARKS = 4;
@@ -26,9 +29,18 @@ function attachHtml(bookmark, style, container, hidden)
   {
     default:
       var div = document.createElement("div");
+      
+      var tbl = document.createElement ("table");
+      var tr  = document.createElement ("tr");
+      var td1 = document.createElement ("td");
+      var td2 = document.createElement ("td");
+      var td3 = document.createElement ("td"); 
+      
       var a = document.createElement("a");
       var up = document.createElement("img");
       var dn = document.createElement("img");
+      var star = document.createElement("img");
+
       var a1 = document.createElement("a");
       var a2 = document.createElement("a");
       var span1 = document.createElement("span"); // text "Rating : "
@@ -41,30 +53,45 @@ function attachHtml(bookmark, style, container, hidden)
       a.href = bookmark.link;
       a.target = "_blank";
       a.innerText = a.innerHTML = a.innerHtml = bookmark.description;
-      up.src = getRootDirectory() + "../img/up.jpg";
-      dn.src = getRootDirectory() + "../img/dn.jpg";
+      up.src = getRootDirectory() + "../img/up.gif";
+      dn.src = getRootDirectory() + "../img/dn.gif";
+      star.src = getRootDirectory() + "../img/star.gif";
+      star.width = 25 * 100/resizex;
+      star.height = 25 * 100/resizey;
       up.thumbsup = true;
       dn.thumbsup = false;
       up.border = 0;
       dn.border = 0;
       span1.style.color = "000888";
       span2.style.color = "000FFF";
-      span1.innerText = span1.innerHTML = span1.innerHtml = "Rating : ";
+      //span1.innerText = span1.innerHTML = span1.innerHtml = "Rating : ";
+      span1.appendChild(star);
       span2.innerText = span2.innerHTML = span2.innerHtml = bookmark.rating;      
 
       a1.appendChild(up);
       a2.appendChild(dn);
-      div.appendChild(a);
-      div.appendChild(a1);
-      div.appendChild(a2);
-      div.appendChild(span1);
-      div.appendChild(span2);
-      
+      tbl.appendChild (tr);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      td1.appendChild(a);
+      td2.appendChild(a1);
+      td2.appendChild(a2);
+      td3.appendChild(span2);
+      td3.appendChild(span1);
+      //tbl.width = "100%";
+      //tbl.width = "0";
+      //td1.width = "40%";
       div["bookmark"] = bookmark; // save reference to the bookmark object here
+      tbl["bookmark"] = bookmark; // save reference to the bookmark object here
       
       if(hidden)
+      {
         div.style.display = "none";
-      container.appendChild(div);
+        tbl.style.display = "none";
+      }
+      tbl.border = "0";
+      container.appendChild(tbl);
   }
 }
 
@@ -115,7 +142,6 @@ function gotBookmarks ()
     }
     catch (e)
     {
-      alert(e);
       throw e;
     }
   }
@@ -133,4 +159,4 @@ function loadBookmarks ()
   xmlHttp.send(null);
 }
 
-loadBookmarks ();
+// loadBookmarks (); is called on onload

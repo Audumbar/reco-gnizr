@@ -13,7 +13,7 @@ Modified : see svn
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 */
 
-var resizex = 50;
+var resizex = 45;
 var resizey = 50;
 var oldx;
 var oldy;
@@ -128,12 +128,20 @@ function changeRating (bookmark, dRating)
   xmlHttp.send(null);
 }
 
+function getAncestor (child, name)
+{
+  while(child && child.nodeName != name.toUpperCase())
+  {
+    child = child.parentNode; 
+  }
+  return child;
+}
 // image has attribute thumbsup attached to it. if true, it means it is 
 // thumbs up image else down
 function imgClick(e)
 {
   var img = getEventTarget(this);
-  var div = img.parentNode.parentNode; // <div><a><img>
+  var div = getAncestor (img, "table");
   if(img.thumbsup)
   {
     if(div["bookmark"]["rating"] < 5)
@@ -142,13 +150,12 @@ function imgClick(e)
       changeRating(div["bookmark"], "+1");
       nChanges++;
     }
-    // TODO: bad practice! change the following two lines immediately
-    span = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
+    span = div.getElementsByTagName("span")[0];
     span.innerText = span.innerHTML = span.innerHtml = div["bookmark"].rating;
     adjustBookmarkSequence(div, true); // raise
     imgMouseOut(null, img); // adjust the image size again
   }
-  else
+  else if(img.thumbsup == false)
   {
     if(div["bookmark"]["rating"] > 0)
     {
@@ -156,8 +163,7 @@ function imgClick(e)
       changeRating(div["bookmark"], "-1");
       nChanges++;
     }
-    // TODO: bad practice! change the following two lines immediately
-    span = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
+    span = div.getElementsByTagName("span")[0];
     span.innerText = span.innerHTML = span.innerHtml = div["bookmark"].rating;
     adjustBookmarkSequence(div, false); // raise
     imgMouseOut(null, img); // adjust the image size again

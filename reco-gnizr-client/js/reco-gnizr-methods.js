@@ -72,18 +72,18 @@ function getEventTarget (obj)
 }
 
 
-function addEvent (object, e, method)
+function addEvent (obj, e, method)
 {
-  if(!object || !e || !method)
+  if(!obj || !e || !method)
     return null;
 
   var func = null;
-  if(object.attachEvent)
+  if(obj.attachEvent)
   {
     e = "on" + e; // click for mozilla is onclick for ie
     func = "attachEvent";
   }
-  else if(object.addEventListener)
+  else if(obj.addEventListener)
   {
     func = "addEventListener";
   }
@@ -91,8 +91,8 @@ function addEvent (object, e, method)
   {
     return null;
   }
-  object[func](e, method, false);
+  obj[func](e, method, false);
 
-  return object;
+  return obj;
 }
 
