@@ -1,39 +1,1 @@
-<html>
-<head><title></title></head>
-
-<style>
-a{
-  text-decoration: none;
-  font: 10px arial; 
-}
-
-span{
-  font: 10px arial; 
-}
-
-img1{
-  width: 12;
-  height: 24;
-}
-
-</style>
-
-<body bgcolor="#d9e6f7" onload="loadBookmarks(); return true;">
-
-<script type="text/javascript" src="../js/reco-gnizr-methods.js">
-</script>
-<script type="text/javascript" src="../js/reco-gnizr-frame-postload.js">
-</script>
-<script type="text/javascript" src="../js/json2.js">
-</script>
-<script type="text/javascript" src="../js/reco-gnizr-frame-init.js">
-</script>
-
-<div id="bookmark_container">
-<!-- all bookmarks will be contained in this div -->
-</div>
-<center><b><i><span>Reco-gnizred Bookmarks</span></i></b></center>
-
-</body>
-
-</html>
+<html><head><title></title></head><style>a{  text-decoration: none;  font: 10px arial; }span{  font: 10px arial; }img1{  width: 12;  height: 24;}</style><body bgcolor="#d9e6f7" onload="loadBookmarks(); return true;"><script>  var h = document.location.hash;  var properties = {};  if(h != "")  {    h = h.substring(1);    var t = [];    t = h.split("&");    for(var i=0; i<t.length; i++)    {      var t2 = t[i].split("=");      properties[t2[0]] = t2[1];    }  }  if(properties["bgcolor"])    document.body.setAttribute("bgcolor", properties["bgcolor"]);</script><script type="text/javascript" src="../js/reco-gnizr-methods.js"></script><script type="text/javascript" src="../js/reco-gnizr-frame-postload.js"></script><script type="text/javascript" src="../js/json2.js"></script><script type="text/javascript" src="../js/reco-gnizr-frame-init.js"></script><span style="align: center"><b><i>Reco-gnizred Bookmarks</i></b></span><div id="bookmark_container"><!-- all bookmarks will be contained in this div --></div></body></html>
