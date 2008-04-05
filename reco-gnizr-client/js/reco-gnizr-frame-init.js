@@ -31,6 +31,7 @@ function attachHtml(bookmark, style, container, hidden)
       var div = document.createElement("div");
       
       var tbl = document.createElement ("table");
+      var tb  = document.createElement ("tbody"); // IE specific
       var tr  = document.createElement ("tr");
       var td1 = document.createElement ("td");
       var td2 = document.createElement ("td");
@@ -46,22 +47,22 @@ function attachHtml(bookmark, style, container, hidden)
       var span1 = document.createElement("span"); // text "Rating : "
       var span2 = document.createElement("span"); // rating
       
-      a1.href = "#";
+      a1.setAttribute("href", "#");
       addEvent (a1, "click", function (){return false});
-      a2.href = "#";
+      a2.setAttribute("href", "#");
       addEvent (a2, "click", function (){return false});
-      a.href = bookmark.link;
-      a.target = "_blank";
+      a.setAttribute("href", bookmark.link);
+      a.setAttribute("target", "_blank");
       a.innerText = a.innerHTML = a.innerHtml = bookmark.description;
-      up.src = getRootDirectory() + "../img/up.gif";
-      dn.src = getRootDirectory() + "../img/dn.gif";
-      star.src = getRootDirectory() + "../img/star.gif";
-      star.width = 25 * 100/resizex;
-      star.height = 25 * 100/resizey;
+      up.setAttribute("src", getRootDirectory() + "../img/up.gif");
+      dn.setAttribute("src", getRootDirectory() + "../img/dn.gif");
+      star.setAttribute("src", getRootDirectory() + "../img/star.gif");
+      star.setAttribute("width", 25 * 100/resizex);
+      star.setAttribute("height", 25 * 100/resizey);
       up.thumbsup = true;
       dn.thumbsup = false;
-      up.border = 0;
-      dn.border = 0;
+      up.setAttribute("border", 0);
+      dn.setAttribute("border", 0);
       span1.style.color = "000888";
       span2.style.color = "000FFF";
       //span1.innerText = span1.innerHTML = span1.innerHtml = "Rating : ";
@@ -70,7 +71,8 @@ function attachHtml(bookmark, style, container, hidden)
 
       a1.appendChild(up);
       a2.appendChild(dn);
-      tbl.appendChild (tr);
+      tbl.appendChild (tb);
+      tb.appendChild(tr);
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
@@ -79,9 +81,10 @@ function attachHtml(bookmark, style, container, hidden)
       td2.appendChild(a2);
       td3.appendChild(span2);
       td3.appendChild(span1);
-      //tbl.width = "100%";
-      //tbl.width = "0";
-      //td1.width = "40%";
+      tbl.setAttribute("width", "100%");
+      td1.setAttribute("width", "40%");
+      td2.setAttribute("width", "30%");
+      td3.setAttribute("width", "15%");
       div["bookmark"] = bookmark; // save reference to the bookmark object here
       tbl["bookmark"] = bookmark; // save reference to the bookmark object here
       
@@ -90,7 +93,7 @@ function attachHtml(bookmark, style, container, hidden)
         div.style.display = "none";
         tbl.style.display = "none";
       }
-      tbl.border = "0";
+      tbl.setAttribute("border", "0");
       container.appendChild(tbl);
   }
 }
