@@ -47,6 +47,7 @@ function attachHtml(bookmark, style, container, hidden)
       var span1 = document.createElement("span"); // text "Rating : "
       var span2 = document.createElement("span"); // rating
       
+      tbl.setAttribute ("id", "bookmarks_table");
       a1.setAttribute("href", "#");
       addEvent (a1, "click", function (){return false});
       a2.setAttribute("href", "#");

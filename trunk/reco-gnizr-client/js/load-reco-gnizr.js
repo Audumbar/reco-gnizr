@@ -15,9 +15,15 @@ Modified : see svn
 */
 
 var thisElement = document.getElementById("recognizrscript");
+var options = thisElement.getAttribute("src");
+if(options.indexOf("#") >=0 )
+  options  = options.substring(options.indexOf("#"));
+else
+  options = "";
+
 recognizrFrame = document.createElement("IFRAME");
 recognizrFrame.setAttribute("src", 
-   "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html#bgcolor=#d9e6f7");
+   "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html" + options);
 
 recognizrFrame.style.border = "none";
 recognizrFrame.style.height = "150px";
