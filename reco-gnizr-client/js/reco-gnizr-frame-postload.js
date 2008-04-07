@@ -170,7 +170,22 @@ function imgClick(e)
   }
   
   if (nChanges >= refreshAfter)
-    document.location.reload();
+  {
+    var div = document.getElementById("bookmark_container");
+    if(div)
+    {
+      var doc = div.parentNode;
+      if(doc)
+      {
+        doc.removeChild(div);
+        div = document.createElement("div");
+        div.setAttribute("id", "bookmark_container");
+        nChanges = 0;
+        doc.appendChild(div);
+        loadBookmarks();
+      }
+    }
+  }
 }
 
 
