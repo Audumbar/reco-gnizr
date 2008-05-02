@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>DemoPage</title>
+
+	<script Language="JavaScript">		
+		function sendRequest()
+		{
+			document.demoform.actioncode.value =  "getbookmarks";
+			document.demoform.clientURL.value = document.URLUnencoded;
+			document.demoform.submit ();
+			return true;
+		}		
+		function sendFeedbackRequest()
+		{
+			document.demoform.actioncode.value = "UPDATEBMRATINGS"; 
+			document.demoform.clientURL.value = document.URLUnencoded;
+			document.demoform.submit ();
+			return true;
+		}
+	</script>
+</head>
+<body>
+<form name="demoform" method="post" action="entry">
+<input type="hidden" name="actioncode" id="actioncode" value="getbookmarks" />
+<input type="hidden" name="clientURL" id="clientURL" value="" />
+<input type="hidden" name="bookmark-id" value="1" />
+<a href="javascript:void(0);" onclick=" return sendRequest()">Send GetBookmarks Request</a>
+<a href="javascript:void(0);" onclick=" return sendFeedbackRequest()">Send feedback Request</a>
+</form>
+</body>
+</html>
