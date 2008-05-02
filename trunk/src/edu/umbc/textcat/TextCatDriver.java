@@ -35,7 +35,7 @@ public class TextCatDriver {
 			ioe.printStackTrace();
 		}
 		TextCategorizer guesser = new TextCategorizer();         
-		guesser.setConfFile("org/knallgrau/utils/textcat/mycat.conf");
+		guesser.setConfFile("textcat-inf/textcat.conf");
 		System.out.println(guesser.categorize(s));
 	}
 	public static void createFP() {

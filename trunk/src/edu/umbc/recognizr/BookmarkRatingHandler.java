@@ -1,7 +1,6 @@
 package edu.umbc.recognizr;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -160,7 +159,7 @@ public class BookmarkRatingHandler {
 		GnizrDBProvider gDBProvider = new GnizrDBProvider();
 		BookmarkRatingHandler rating = new BookmarkRatingHandler(gDBProvider.getDataSource());
 		
-		DaoResult<BookmarkRating> bms = rating.getBookmarkbyCategory("technology");
+		//DaoResult<BookmarkRating> bms = rating.getBookmarkbyCategory("technology");
 		rating.update_rating(2, "sports", 3);
 		System.out.println( rating.getBookmarkRating(3, "music"));
 		//rating.incrementRating(3, "music");
