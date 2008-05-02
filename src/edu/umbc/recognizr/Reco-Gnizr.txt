@@ -1,0 +1,17 @@
+CREATE TABLE gnizr_db.bookmark_rating(id INT(10) unsigned NOT NULL,category VARCHAR(100),rating INT, 
+Foreign Key (id) references gnizr_db.bookmark(id),UNIQUE key combo (id,category))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
+
+INSERT INTO gnizr_db.bookmark_rating (id, category,rating) VALUES('1', 'technology', '2' );
+INSERT INTO gnizr_db.bookmark_rating (id, category,rating) VALUES('2', 'sports', '2' );
+INSERT INTO gnizr_db.bookmark_rating (id, category,rating) VALUES('3', 'music', '2' );
+
+
+drop table gnizr_db.bookmark_rating;
+select * from gnizr_db.bookmark_rating;
+delete from gnizr_db.bookmark_rating where id =1;
+
+
+INSERT INTO gnizr_db.bookmark_rating (id, category,rating) VALUES('1', 'technology', '2' ) ON DUPLICATE KEY UPDATE rating=2
+
+
+select rating from gnizr_db.bookmark_rating where id =1 and category = 'technology';
