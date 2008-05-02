@@ -21,7 +21,7 @@ public class TextCategorizer {
 	
 	private final static int UNKNOWN_LIMIT = 10;
 
-	private final String jarConfFile = "WEB-INF/textcat.conf";
+	private final String jarConfFile = "textcat-inf/textcat.conf";
 
 	private ArrayList<FingerPrint> categories = new ArrayList<FingerPrint>();
 
