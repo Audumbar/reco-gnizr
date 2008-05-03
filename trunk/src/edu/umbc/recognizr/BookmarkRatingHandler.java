@@ -115,10 +115,13 @@ public class BookmarkRatingHandler {
 			conn = getDataSource().getConnection();
 			stmt1 = conn.createStatement();
 			rs1 = stmt1.executeQuery("SELECT rating FROM gnizr_db.bookmark_rating where id = "+ id + " and  category ='" + category + "'");			
-			
+			 //Issue 1:     New value for category throws SQLException exception  
+			if(rs1.getFetchSize()>0)
+			{
 				rs1.first();
 				rating = rs1.getInt(1);
-			
+			}
+			 //Issue 1:     New value for category throws SQLException exception  
 		} 
 		catch (SQLException e)
 		{
@@ -139,11 +142,14 @@ public class BookmarkRatingHandler {
 	}
 	
 	
-	
+	// Issue 2 Enhancement Request - Increment rating function 
+	//Owner:  uday.mit  
 	public void incrementRating(int id,String category)
 	{
 		int current_rating = getBookmarkRating(id, category);
 		int new_rating = current_rating + 1; 
+		if(new_rating<0)
+			new_rating =0;
 		update_rating(id, category, new_rating);
 	}
 	
@@ -151,6 +157,8 @@ public class BookmarkRatingHandler {
 	{
 		int current_rating = getBookmarkRating(id, category);
 		int new_rating = current_rating - 1; 
+		if(new_rating<0)
+			new_rating =0;
 		update_rating(id, category, new_rating);
 	}
 
