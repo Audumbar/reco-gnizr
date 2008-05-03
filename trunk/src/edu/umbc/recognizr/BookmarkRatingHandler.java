@@ -150,6 +150,9 @@ public class BookmarkRatingHandler {
 		int new_rating = current_rating + 1; 
 		if(new_rating<0)
 			new_rating =0;
+		 //Issue 4:  Bookmark rating set more than 5 
+		if(new_rating > 5)
+			new_rating = 5;
 		update_rating(id, category, new_rating);
 	}
 	
@@ -159,6 +162,9 @@ public class BookmarkRatingHandler {
 		int new_rating = current_rating - 1; 
 		if(new_rating<0)
 			new_rating =0;
+		 //Issue 4:     Bookmark rating set more than 5 
+		 if(new_rating > 5)
+				new_rating = 5;
 		update_rating(id, category, new_rating);
 	}
 
