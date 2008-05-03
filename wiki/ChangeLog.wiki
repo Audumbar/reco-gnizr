@@ -3,10 +3,10 @@
 
 ==Change Log for version 0.1==
 
-#Added database rating table in gnizr_db schema that keeps user ratings for bookmarks.
+# Added database rating table in gnizr_db schema that keeps user ratings for bookmarks.
 
 
 
 ==Change Log for version 0.2==
 
-#Added category field to bookmark_rating table.(Redefined the table)Added unique key (id,category).Refer this file for more details.
+# Added category field to bookmark_rating table.(Redefined the table)Added unique key (id,category).Refer this file for more details.
