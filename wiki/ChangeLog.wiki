@@ -2,8 +2,11 @@
 #labels Featured
 
 Change Log for version 0.1
+
 1] Added database rating table in gnizr_db schema that keeps user ratings
 
 
+
 Change Log for version 0.2
+
 1] Added category field to bookmark_rating table.(Redifined the table)Added unique key (id,category).Refer this file for more details.
