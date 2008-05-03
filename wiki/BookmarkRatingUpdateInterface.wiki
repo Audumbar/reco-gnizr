@@ -1,4 +1,13 @@
+#summary interface between client and the server
+
+= Introduction =
+
 The interface between client and the server for updating the bookmark rating
+
+= Details =
+
+
+
 
 When the user rates the bookmark high or low, the client sends the following GET request
 to the server so that it can update the bookmark's rating.
