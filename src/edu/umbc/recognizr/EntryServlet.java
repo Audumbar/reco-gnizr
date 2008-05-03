@@ -9,13 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class for Servlet: EntryServlet
- * @author audumbar
  */
  public class EntryServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
    static final long serialVersionUID = 1L;
 
-   public static final String ACTIONCODE_GETBOOKMARKS = "GETBOOKMARKS";
-   public static final String ACTIONCODE_UPDATERATINGS = "UPDATEBMRATINGS";
     /* (non-Java-doc)
 	 * @see javax.servlet.http.HttpServlet#HttpServlet()
 	 */
@@ -52,29 +49,52 @@ import javax.servlet.http.HttpServletResponse;
 		
 		
 //		parseRequest();
-		try { l_actionCode = p_request.getParameter("actioncode"); } catch (Exception e) { e.printStackTrace(); }
-//		try { l_clientURL = p_request.getParameter("clientURL"); } catch (Exception e) { e.printStackTrace(); }
-		try { l_clientURL = p_request.getHeader("REFERER"); } catch (Exception e) { e.printStackTrace(); }
-		try { l_bookmarkId = p_request.getParameter("bookmark_id"); } catch (Exception e) { e.printStackTrace(); }
-		try { l_category = p_request.getParameter("category"); } catch (Exception e) { e.printStackTrace(); }
-		try { l_rating = p_request.getParameter("change"); } catch (Exception e) { e.printStackTrace(); }
+		try { 
+			l_actionCode = p_request.getParameter("actioncode"); 
+		} catch (Exception e) { e.printStackTrace(); }
+		
+//		try { 
+//			l_clientURL = p_request.getParameter("clientURL"); 
+//		} catch (Exception e) { e.printStackTrace(); }
+		try { 
+			l_clientURL = p_request.getHeader("REFERER"); 
+		} catch (Exception e) { e.printStackTrace(); }
+		try { 
+			l_bookmarkId = p_request.getParameter("bookmark_id"); 
+		} catch (Exception e) { e.printStackTrace(); }
+		try { 
+			l_category = p_request.getParameter("category"); 
+		} catch (Exception e) { e.printStackTrace(); }
+		try { 
+			l_rating = p_request.getParameter("change"); 
+		} catch (Exception e) { e.printStackTrace(); }
 		
 //		validateRequest();
-		
 		p_instanceData = new InstanceData();
-		p_instanceData.actionCode = l_actionCode;
-		p_instanceData.clientURL = l_clientURL;
-		p_instanceData.bookmarkId = l_bookmarkId;
-		p_instanceData.category = l_category;
-		p_instanceData.rating = l_rating;
+		if(!l_actionCode.isEmpty())
+			p_instanceData.actionCode = l_actionCode;
+		if(!l_clientURL.isEmpty())
+			p_instanceData.clientURL = l_clientURL;
+		if(!l_category.isEmpty())
+			p_instanceData.category = l_category;
+		
+		try {
+			p_instanceData.bookmarkId = Integer.parseInt(l_bookmarkId);
+		} catch (NumberFormatException e) { e.printStackTrace(); }
+		
+		if (!l_rating.isEmpty() && l_rating.equalsIgnoreCase("+1")) {
+			p_instanceData.changeInRating = InstanceData.INCREMENT_RATING;
+		} else if (!l_rating.isEmpty() && l_rating.equalsIgnoreCase("-1")) {
+			p_instanceData.changeInRating = InstanceData.DECREMENT_RATING;
+		}
 		
 //		fireAppComponent();
-		if (l_actionCode.equalsIgnoreCase(ACTIONCODE_GETBOOKMARKS)) {
-
-			BookmarksRetriever bmRetriever = new BookmarksRetriever();
+		BookmarksRetriever bmRetriever = new BookmarksRetriever();
+		
+		if (l_actionCode.equalsIgnoreCase(InstanceData.ACTIONCODE_GETBOOKMARKS)) {
 			bmRetriever.getBookmarks(p_instanceData);
 		}
-		else  if (l_actionCode.equalsIgnoreCase(ACTIONCODE_UPDATERATINGS)) {
+		else  if (l_actionCode.equalsIgnoreCase(InstanceData.ACTIONCODE_UPDATERATINGS)) {
 			
 		}
 		

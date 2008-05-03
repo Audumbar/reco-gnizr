@@ -147,9 +147,19 @@ public class BookmarksRetriever {
 		String pageCategory = "";
 		
 		TextCategorizer guesser = new TextCategorizer();         
-		guesser.setConfFile("WEB-INF/textcat.conf");
+		guesser.setConfFile("WEB-INF/textcat-inf/textcat.conf");
 		pageCategory = guesser.categorize(p_pageContents);
 		return pageCategory;
+	}
+	
+	public String updateBookmarkRating(InstanceData p_instanceData) {
+		Boolean l_result = true; 
+		if (p_instanceData.changeInRating == InstanceData.INCREMENT_RATING) {			
+			bmarkRatingDao.incrementRating(p_instanceData.bookmarkId, p_instanceData.category);
+		} else if (p_instanceData.changeInRating == InstanceData.DECREMENT_RATING) {
+			bmarkRatingDao.decrementRating(p_instanceData.bookmarkId, p_instanceData.category);
+		}
+		return l_result==true? "Success":"Failure";
 	}
 
 }

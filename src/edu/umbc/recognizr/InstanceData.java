@@ -12,6 +12,7 @@ implements
 	 * 
 	 */
 	private static final long serialVersionUID = -4938281655475539648L;
+	
 
 	public String actionCode;
 	
@@ -19,19 +20,29 @@ implements
 	
 	public String clientResponse;
 	
-	public String bookmarkId;
+	public int bookmarkId;
 	
 	public String category;
 	
-	public String rating;
+	public int changeInRating;
 	
+	public static int INCREMENT_RATING = 1;
+	
+	public static int DECREMENT_RATING = 0;
+	
+	public static final String ACTIONCODE_GETBOOKMARKS = "GETBOOKMARKS";
+	
+	public static final String ACTIONCODE_UPDATERATINGS = "UPDATEBMRATINGS";
+	
+	public static final String DEFAULT_CATEGORY = "GENERAL";
+	   
 	public InstanceData() {
-		actionCode = "";
+		actionCode = ACTIONCODE_GETBOOKMARKS;
 		clientURL = "";
 		clientResponse = "";
-		bookmarkId = "";
-		category = "";
-		rating = "";
+		bookmarkId = 0;
+		category = DEFAULT_CATEGORY;
+		changeInRating = INCREMENT_RATING;
 	}
 
 }
