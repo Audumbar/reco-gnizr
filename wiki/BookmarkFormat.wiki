@@ -1,5 +1,14 @@
+#summary Format for sending JSON data
 #labels Phase-Design
+
+= Introduction =
+
 The format for sending JSON data containing bookmarks to the client:
+
+= Details =
+
+
+
 
 The client widget first sends a request to reco-gnizr-get-bookmarks.html.
 reco-gnizr-get-bookmarks.html may take one of the two parameters
