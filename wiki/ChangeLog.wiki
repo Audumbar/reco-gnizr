@@ -11,3 +11,8 @@
 
   * Added category field to bookmark_rating table.(Redefined the table) Added unique key (id,category).
   * Refer http://reco-gnizr.googlecode.com/files/Reco-Gnizr.txt  file for more details.
+
+
+==Change Log for version 0.3==
+
+  * Added Http parameter for category in requests.
