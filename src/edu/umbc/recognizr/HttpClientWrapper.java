@@ -6,6 +6,7 @@ package edu.umbc.recognizr;
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
+import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.cookie.CookiePolicy;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.params.HttpClientParams;
@@ -28,7 +29,9 @@ public class HttpClientWrapper {
 	}
 	
 	public String getPageContents(String p_pageURL) {
+		int retries = 3;
 		String pageContents = "";
+		
 		HttpClientParams clientParams = new HttpClientParams();
 
 		clientParams.setCookiePolicy(CookiePolicy.DEFAULT);
@@ -38,15 +41,21 @@ public class HttpClientWrapper {
         
         method.addRequestHeader(new Header("User-Agent", DEFAULT_USER_AGENT));
 
-        try {
-            statusCode = client.executeMethod(method);
-            body = method.getResponseBody();	
-        } catch (Exception e) {
-        	System.out.println("Error : " + e.getMessage());
-        }
-		pageContents = body.toString();
+        do {
+	        try {
+	            statusCode = client.executeMethod(method);
+	            body = method.getResponseBody();
+	    		pageContents = body.toString();
+	        } catch (Exception e) {
+	        	System.out.println("["+(4-retries)+"]Error in retrieving contents for url: " 
+	        			+ p_pageURL + ": "+ e.getMessage());
+	        }
+        } while (statusCode != HttpStatus.SC_OK && --retries > 0);
+        
+		
 		return pageContents;
 	}
+	
 	public static void main(String[] args) {
 		String url = new String("http://tagthe.net/api/?url=http://socialwebtechnologies.blogspot.com/");
 		HttpClientWrapper clientWrapper = new HttpClientWrapper();
@@ -66,7 +75,6 @@ public class HttpClientWrapper {
         	
         }
         
-		System.out.println("hello world");
 		System.out.println(clientWrapper.statusCode + new String(clientWrapper.body).toString());
 	}
 }
