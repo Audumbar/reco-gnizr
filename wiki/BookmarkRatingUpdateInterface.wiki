@@ -13,8 +13,8 @@ When the user rates the bookmark high or low, the client sends the following GET
 to the server so that it can update the bookmark's rating.
 
 {{{
-reco-gnizr-change-rating.html?bookmark_id=ID_HERE&change=+1
-reco-gnizr-change-rating.html?bookmark_id=ID_HERE&change=-1
+reco-gnizr-change-rating.html?bookmark_id=ID_HERE&category=TECHNOLOGY&change=+1
+reco-gnizr-change-rating.html?bookmark_id=ID_HERE&category=TECHNOLOGY&change=-1
 }}}
 
 
