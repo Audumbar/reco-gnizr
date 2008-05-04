@@ -15,6 +15,14 @@ import java.util.Map.Entry;
  * the FingerPrint of a text with a collection of the FingerPrints of the
  * categories.
  * 
+ * ChangeLog:
+ * @author audumbar
+ * changed 'jarConfFile' value. 
+ * changed the 'getDistance' method 
+ * 	- to increse the number of token comparisons
+ *  - to return 'GENERAL' as DEFAULT category  
+ *  
+ * 
  */
 public class TextCategorizer {
 	private File confFile = null;
@@ -91,7 +99,7 @@ public class TextCategorizer {
 	 */
 	public String categorize(String text) {
 		if(text.length() < UNKNOWN_LIMIT) {
-			return "unknown";
+			return "GENERAL";
 		}
 		FingerPrint fp = new FingerPrint();
 		fp.create(text);

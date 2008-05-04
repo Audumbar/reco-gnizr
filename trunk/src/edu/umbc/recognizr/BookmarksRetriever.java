@@ -67,10 +67,10 @@ public class BookmarksRetriever {
 				bmListStr.append("\""+linkStr+"\"");
 				bmListStr.append(", \"description\": ");
 				bmListStr.append("\""+description+"\"");
+				bmListStr.append(", \"category\": ");
+				bmListStr.append("\""+category+"\"");				
 				bmListStr.append(", \"rating\": ");
 				bmListStr.append(rating);
-				bmListStr.append(", \"category\": ");
-				bmListStr.append(category);				
 				bmListStr.append("},");
 				cnt++;
 				
@@ -133,12 +133,15 @@ public class BookmarksRetriever {
 	public String getPageContext (String p_webpageURL) {
 		//do web content scraping for p_webpageURL
 		//and return the context of the page as search query for community bookmark search
-		//return "searchengine";
-		String pageCategory = "";
+		String pageCategory = InstanceData.DEFAULT_CATEGORY;
+		String pageContents = "";
 		
 		HttpClientWrapper httpClient = new HttpClientWrapper();
-		String pageContents = httpClient.getPageContents(p_webpageURL);
-		pageCategory = getPageCategory(pageContents);
+		
+		pageContents = httpClient.getPageContents(p_webpageURL);
+		
+		if (pageContents.length() > 10)
+			pageCategory = getPageCategory(pageContents);
 		
 		return pageCategory;
 	}
