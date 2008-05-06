@@ -3,14 +3,23 @@ package edu.umbc.recognizr;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * @author audumbar
  * Servlet implementation class for Servlet: EntryServlet
  */
- public class EntryServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
+ public class 
+ 	EntryServlet 
+ extends 
+ 	HttpServlet 
+ implements Servlet {
+	 
+	 
    static final long serialVersionUID = 1L;
 
     /* (non-Java-doc)
