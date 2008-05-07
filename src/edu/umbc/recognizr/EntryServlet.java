@@ -112,7 +112,7 @@ import javax.servlet.http.HttpServletResponse;
 			bmRetriever.getBookmarks(p_instanceData);
 		}
 		else  if (l_actionCode.equalsIgnoreCase(InstanceData.ACTIONCODE_UPDATERATINGS)) {
-			
+			bmRetriever.updateBookmarkRating(p_instanceData);
 		}
 		
 		
