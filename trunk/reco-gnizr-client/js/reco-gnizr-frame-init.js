@@ -17,7 +17,7 @@ Star image borrowed from
 http://www.flickr.com/photos/eggie/323587586/ 
 */
 
-MAX_BOOKMARKS = 4;
+
 bookmarks = null;
 xmlHttp = null;
 bookmarkSource = "../test/reco-gnizr-get-bookmarks.html";
