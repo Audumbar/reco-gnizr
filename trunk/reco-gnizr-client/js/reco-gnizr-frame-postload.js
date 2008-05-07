@@ -121,7 +121,8 @@ function changeRating (bookmark, dRating)
   var xmlHttp = getXmlHttpObject();
   var url = getRootDirectory() + urlToChangeRating + "?" + 
                   "bookmark_id=" + escape(bookmark["id"]) + "&" +
-                  "change="+escape(dRating);
+                  "change="+escape(dRating) + "&" +
+                  "category="+escape(bookmark["category"]);
   url = url.replace("+", "%2B");
   xmlHttp.onreadystatechange = function (){return true;}
   xmlHttp.open("GET", url, true);
