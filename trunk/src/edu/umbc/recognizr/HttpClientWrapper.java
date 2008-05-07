@@ -3,6 +3,10 @@
  */
 package edu.umbc.recognizr;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
@@ -44,8 +48,21 @@ public class HttpClientWrapper {
         do {
 	        try {
 	            statusCode = client.executeMethod(method);
-	            body = method.getResponseBody();
-	    		pageContents = body.toString();
+	            //pageContents = method.getResponseBodyAsStream();
+	    		InputStreamReader isr = new InputStreamReader(method.getResponseBodyAsStream());
+	    		BufferedReader br = new BufferedReader(isr);
+	    		String line;
+	    		StringBuffer contentBuffer = new StringBuffer(60000);
+	    		try {
+	    			while ((line = br.readLine()) != null) {
+	    				contentBuffer.append(line);
+	    			}
+	    			br.close();
+	    			isr.close();
+	    		} catch (IOException ioe) {
+	    			ioe.printStackTrace();
+	    		}
+	    		pageContents = contentBuffer.toString();
 	        } catch (Exception e) {
 	        	System.out.println("["+(4-retries)+"]Error in retrieving contents for url: " 
 	        			+ p_pageURL + ": "+ e.getMessage());

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * @author audumbar
  * Servlet implementation class for Servlet: EntryServlet
@@ -62,12 +63,12 @@ import javax.servlet.http.HttpServletResponse;
 			l_actionCode = p_request.getParameter("actioncode"); 
 		} catch (Exception e) { e.printStackTrace(); }
 		
-//		try { 
-//			l_clientURL = p_request.getParameter("clientURL"); 
-//		} catch (Exception e) { e.printStackTrace(); }
 		try { 
-			l_clientURL = p_request.getHeader("REFERER"); 
+			l_clientURL = p_request.getParameter("clientURL"); 
 		} catch (Exception e) { e.printStackTrace(); }
+//		try { 
+//			l_clientURL = p_request.getHeader("REFERER"); 
+//		} catch (Exception e) { e.printStackTrace(); }
 		try { 
 			l_bookmarkId = p_request.getParameter("bookmark_id"); 
 		} catch (Exception e) { e.printStackTrace(); }
@@ -79,22 +80,29 @@ import javax.servlet.http.HttpServletResponse;
 		} catch (Exception e) { e.printStackTrace(); }
 		
 //		validateRequest();
-		p_instanceData = new InstanceData();
-		if(!l_actionCode.isEmpty())
-			p_instanceData.actionCode = l_actionCode;
-		if(!l_clientURL.isEmpty())
-			p_instanceData.clientURL = l_clientURL;
-		if(!l_category.isEmpty())
-			p_instanceData.category = l_category;
-		
 		try {
-			p_instanceData.bookmarkId = Integer.parseInt(l_bookmarkId);
-		} catch (NumberFormatException e) { e.printStackTrace(); }
-		
-		if (!l_rating.isEmpty() && l_rating.equalsIgnoreCase("+1")) {
-			p_instanceData.changeInRating = InstanceData.INCREMENT_RATING;
-		} else if (!l_rating.isEmpty() && l_rating.equalsIgnoreCase("-1")) {
-			p_instanceData.changeInRating = InstanceData.DECREMENT_RATING;
+			
+			p_instanceData = new InstanceData();
+			if(l_actionCode != null && !l_actionCode.isEmpty())
+				p_instanceData.actionCode = l_actionCode;
+			if(l_clientURL != null && !l_clientURL.isEmpty())
+				p_instanceData.clientURL = l_clientURL;
+			if(l_category != null && !l_category.isEmpty())
+				p_instanceData.category = l_category;
+	
+			if (l_rating != null && !l_rating.isEmpty() && l_rating.equalsIgnoreCase("+1")) {
+				p_instanceData.changeInRating = InstanceData.INCREMENT_RATING;
+			} else if (l_rating != null && !l_rating.isEmpty() && l_rating.equalsIgnoreCase("-1")) {
+				p_instanceData.changeInRating = InstanceData.DECREMENT_RATING;
+			}
+			try {
+				if(l_bookmarkId != null)
+					p_instanceData.bookmarkId = Integer.parseInt(l_bookmarkId);
+			} catch (NumberFormatException nfe) { nfe.printStackTrace(); throw nfe ;}
+			
+			InstanceData.realWebAppPath = getServletContext().getRealPath("/");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 //		fireAppComponent();
