@@ -42,11 +42,13 @@ public class BookmarksRetriever {
 		
 		String bmResult = "";
 		StringBuffer bmListStr = new StringBuffer(1024);
+		List<BookmarkRating> bmList = null;
 		
 		DaoResult<BookmarkRating> bmRatings = bmarkRatingDao.getBookmarkbyCategory(p_category);
-		if(bmRatings != null && bmRatings.getSize() > 0)
+		if(bmRatings != null)
+			bmList = bmRatings.getResult();
+		if(bmList != null && bmList.size() > 0)
 		{
-			List<BookmarkRating> bmList = bmRatings.getResult();
 			int cnt = 0;
 			
 			for (BookmarkRating bookmarkRating : bmList) {
@@ -79,7 +81,7 @@ public class BookmarksRetriever {
 				}
 			}
 		}
-		if(bmListStr.charAt(bmListStr.length()-1) == ',') {
+		if(bmListStr.length() > 0 && bmListStr.charAt(bmListStr.length()-1) == ',') {
 			bmListStr.setLength(bmListStr.length()-1);
 		}
 		bmResult = "{\"bookmarks\" : ["+ bmListStr.toString()+"] };";
@@ -148,9 +150,10 @@ public class BookmarksRetriever {
 	
 	public String getPageCategory(String p_pageContents) {
 		String pageCategory = "";
-		
+		String l_conffile_path = InstanceData.realWebAppPath+"WEB-INF/textcat-inf/textcat.conf"; 
+
 		TextCategorizer guesser = new TextCategorizer();         
-		guesser.setConfFile("WEB-INF/textcat-inf/textcat.conf");
+		guesser.setConfFiles(InstanceData.realWebAppPath, l_conffile_path);
 		pageCategory = guesser.categorize(p_pageContents);
 		return pageCategory;
 	}

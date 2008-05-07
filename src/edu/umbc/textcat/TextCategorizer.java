@@ -30,11 +30,16 @@ public class TextCategorizer {
 	private final static int UNKNOWN_LIMIT = 10;
 
 	private final String jarConfFile = "textcat-inf/textcat.conf";
+	
+	private String webAppPath = "";
 
 	private ArrayList<FingerPrint> categories = new ArrayList<FingerPrint>();
 
 	public TextCategorizer() {
-		loadCategories();
+	}
+	
+	public void setWebAppPath(String p_path) {
+		webAppPath = p_path;
 	}
 
 	/**
@@ -45,8 +50,9 @@ public class TextCategorizer {
 	 * @param confFile
 	 *            the path to the configuration file
 	 */
-	public TextCategorizer(String confFile) {
-		setConfFile(confFile);
+	public TextCategorizer(String webAppPath,String confFile) {
+		setWebAppPath(webAppPath);
+		setConfFiles(webAppPath, confFile);
 	}
 
 	/**
@@ -55,7 +61,8 @@ public class TextCategorizer {
 	 * @param confFile
 	 *            the path to the configuration file
 	 */
-	public void setConfFile(String confFile) {
+	public void setConfFiles(String webAppPath,String confFile) {
+		setWebAppPath(webAppPath);
 		this.confFile = new File(confFile);
 		loadCategories();
 	}
@@ -69,19 +76,13 @@ public class TextCategorizer {
 		try {
 			MyProperties properties = new MyProperties();
 			if (confFile == null) {
-				properties.load(TextCategorizer.class.getClassLoader()
-						.getResourceAsStream(jarConfFile));
+				properties.load(new FileInputStream(new File(webAppPath,jarConfFile)));
 			} else {
 				properties.load(new FileInputStream(confFile.toString()));
 			}
 			for (Entry<String, String> entry : properties.entrySet()) {
 				FingerPrint fp;
-				if (confFile == null) {
-					fp = new FingerPrint(TextCategorizer.class.getClassLoader()
-							.getResourceAsStream(entry.getKey()));
-				} else {
-					fp = new FingerPrint(entry.getKey());
-				}
+				fp = new FingerPrint(new FileInputStream(new File(webAppPath,entry.getKey())));
 				fp.setCategory(entry.getValue());
 				this.categories.add(fp);
 			}

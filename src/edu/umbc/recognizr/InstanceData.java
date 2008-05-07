@@ -35,6 +35,8 @@ implements
 	public static final String ACTIONCODE_UPDATERATINGS = "UPDATEBMRATINGS";
 	
 	public static final String DEFAULT_CATEGORY = "GENERAL";
+	
+	public static String realWebAppPath;
 	   
 	public InstanceData() {
 		actionCode = ACTIONCODE_GETBOOKMARKS;
