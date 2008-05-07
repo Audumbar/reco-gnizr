@@ -17,7 +17,7 @@ var resizex = 45;
 var resizey = 50;
 var oldx;
 var oldy;
-var urlToChangeRating = "../test/reco-gnizr-change-rating.html";
+var urlToChangeRating = "../entry";
 var refreshAfter = 8;
 var nChanges= 0;
 
@@ -120,6 +120,7 @@ function changeRating (bookmark, dRating)
 {
   var xmlHttp = getXmlHttpObject();
   var url = getRootDirectory() + urlToChangeRating + "?" + 
+                  "actioncode=updatebmratings&"+
                   "bookmark_id=" + escape(bookmark["id"]) + "&" +
                   "change="+escape(dRating) + "&" +
                   "category="+escape(bookmark["category"]);
