@@ -21,6 +21,10 @@ if(options.indexOf("#") >=0 )
 else
   options = "";
 
+var turl = document.location.href;
+turl = turl.replace(/=/g, "%3D").replace(/&/g, "%26")
+options += "&clientURL=" + escape(turl);
+
 recognizrFrame = document.createElement("IFRAME");
 recognizrFrame.setAttribute("src", 
    "http://localhost:8080/reco-gnizr/html/reco-gnizr-frame.html" + options);
