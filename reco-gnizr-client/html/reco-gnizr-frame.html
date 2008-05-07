@@ -21,7 +21,12 @@ img1{
 <body bgcolor="#d9e6f7" onload="loadBookmarks(); return true;">
 
 <script>
-  var h = document.location.hash;
+  var h = document.location.href;
+  if(h.indexOf('#') > 0)
+    h = h.substring(h.indexOf("#"));
+  else
+    h = "";
+
   var properties = {};
   if(h != "")
   {
@@ -39,6 +44,7 @@ img1{
   
   if(properties["linkcolor"])
     changeRule(0, "color", properties["linkcolor"]);
+  
   
   MAX_BOOKMARKS = 4;  
   //if(properties["max"])
