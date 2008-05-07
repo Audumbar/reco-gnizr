@@ -36,6 +36,24 @@ img1{
   }
   if(properties["bgcolor"])
     document.body.setAttribute("bgcolor", properties["bgcolor"]);
+  
+  if(properties["linkcolor"])
+    changeRule(0, "color", properties["linkcolor"]);
+  
+  MAX_BOOKMARKS = 4;  
+  //if(properties["max"])
+    //MAX_BOOKMARKS = 
+  
+  function changeRule(theNumber, attribute, value) {
+	  var theRules = new Array();
+	  if (document.styleSheets[0].cssRules) {
+	  	theRules = document.styleSheets[0].cssRules;
+	  } else if (document.styleSheets[0].rules) {
+	 	  theRules = document.styleSheets[0].rules;
+	  }
+	  theRules[theNumber].style[attribute] = value;
+  }
+  
 </script>
 
 <script type="text/javascript" src="../js/reco-gnizr-methods.js">
