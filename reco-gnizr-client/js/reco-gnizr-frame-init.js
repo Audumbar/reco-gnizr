@@ -20,10 +20,10 @@ http://www.flickr.com/photos/eggie/323587586/
 
 bookmarks = null;
 xmlHttp = null;
-bookmarkSource = "../test/reco-gnizr-get-bookmarks.html";
+bookmarkSource = "../entry";
 if(properties["clientURL"])
 {
-  bookmarkSource += "?clientURL=" + properties["clientURL"];
+  bookmarkSource += "?actioncode=getbookmarks"+"&clientURL=" + properties["clientURL"];
 }
 
 function attachHtml(bookmark, style, container, hidden)
