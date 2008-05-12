@@ -1,0 +1,7 @@
+#summary Steps for installation of reco-gnizr
+
+= Introduction =
+
+This file describes the steps to install reco-gnizr system. 
+
+= Details =
