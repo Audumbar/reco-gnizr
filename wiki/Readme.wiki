@@ -30,5 +30,6 @@ Add the above mentioned 'div' tag at the desired location.
 
 === Final Project Presentation ===
 http://www.slideshare.net/audumbar/recognizr-project-presentation-401603/
-To download the presentation:
+
+ * To download the presentation:
 http://reco-gnizr.googlecode.com/files/Final_Presentation.pdf
