@@ -9,7 +9,8 @@ It also describes how to embed the reco-gnizr web-widget.
 === The installation of reco-gnizr is pretty easy! ===
  * It involves setting up Tomcat (like servlet listener) server - version 6.x or above
  * Set up mySQL database - version[5.x]
- * Install Gnizr application, Follow the instructions on Gnizr wiki page - http://code.google.com/p/gnizr/wiki/HowToInstall
+ * Download and install the customized version of Gnizr from http://reco-gnizr.googlecode.com/files/rgnizr.jar
+For installation, follow the instructions on Gnizr wiki page - http://code.google.com/p/gnizr/wiki/HowToInstall
  * Download the Reco-Gnizr sql script. http://reco-gnizr.googlecode.com/files/Reco-Gnizr.txt
  * Run the Reco-Gnizr DB Scripts
  * Download the web archieve file[reco-gnizr.war - http://reco-gnizr.googlecode.com/files/reco-gnizr.war]
