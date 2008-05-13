@@ -1,20 +1,25 @@
 #summary Change log for milestones and releases
 #labels Featured
 
-==Change Log for version 0.1==
+==Change Log for version 0.1 [03/24/2008]==
 
   * Added database rating table in gnizr_db schema that keeps user ratings for bookmarks.
   * Implemented high level design for mockup. Implementation includes Client Javascript code, servlet and java beans to retrieve bookmarks from Gnizr database
 
 
-==Change Log for version 0.2==
+==Change Log for version 0.2 [04/14/2008]==
 
   * Added category field to bookmark_rating table.(Redefined the table) Added unique key (id,category).
   * Refer http://reco-gnizr.googlecode.com/files/Reco-Gnizr.txt  file for more details.
   * Added Http parameter for category in requests.
   * Added Ajax functionality to the front end.
 
-==Change Log for version 0.3==
+==Change Log for version 0.3 [04/29/2008]==
   * Implemented Http Client to get Client web page contents.
   * Integrated with code for text categorization
   * IE compatibility issues resolved.
+
+==Change Log [05/12/2008]==
+ * Added the Readme wikipage
+ * Uploaded the packages for download 
+ * Uploaded the final project presentation slides
