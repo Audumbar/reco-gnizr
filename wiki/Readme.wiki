@@ -1,5 +1,5 @@
 #summary Steps for installation of reco-gnizr
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 
 = Introduction =
 This file describes the steps to install reco-gnizr system. 
