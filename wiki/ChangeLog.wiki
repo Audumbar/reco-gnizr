@@ -6,6 +6,7 @@
   * Added database rating table in gnizr_db schema that keeps user ratings for bookmarks.
   * Implemented high level design for mockup. Implementation includes Client Javascript code, servlet and java beans to retrieve bookmarks from Gnizr database
 
+Mockup Screenshots of the Bookmarks recommender webwidget are available on Task2Screenshots
 
 ==Change Log for version 0.2 [04/14/2008]==
 
