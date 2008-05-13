@@ -24,3 +24,5 @@ Just copy the 'div' tag in the HTML source of the web page where the user wants 
         <div>
         <script id="recognizrscript" type="text/javascript" src="http://localhost:8080/reco-gnizr/js/load-reco-gnizr.js#bgcolor=white&width=300px"></script>
         </div>
+
+Add the above mentioned 'div' tag at the desired location.
