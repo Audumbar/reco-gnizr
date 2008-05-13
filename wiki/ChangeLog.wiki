@@ -22,5 +22,6 @@ Mockup Screenshots of the Bookmarks recommender webwidget are available on Task2
 
 ==Change Log [05/12/2008]==
  * Added the Readme wikipage
+ * Refer http://code.google.com/p/reco-gnizr/wiki/Readme for more details
  * Uploaded the packages for download 
  * Uploaded the final project presentation slides
