@@ -1,7 +1,17 @@
 #summary Steps for installation of reco-gnizr
+#labels Phase-Deploy
 
 = Introduction =
 
 This file describes the steps to install reco-gnizr system. 
 
 = Details =
+The installation of reco-gnizr is pretty easy!
+ * It involves setting up Tomcat (like servlet listener) server - [version 6.x or above]
+ * Set up mySQL database - version[4.x]
+ * Install Gnizr application, Follow the instructions on Gnizr wiki page - http://code.google.com/p/gnizr/wiki/HowToInstall
+ * Download the Reco-Gnizr sql script. http://reco-gnizr.googlecode.com/files/Reco-Gnizr.txt
+ * Run the Reco-Gnizr DB Scripts
+ * Download the web archieve file[reco-gnizr.war - http://reco-gnizr.googlecode.com/files/reco-gnizr.war]
+ * Install the war, by just copying it in the "[Tomcat-home]/webapps/" folder
+ * and that's it! start Tomcat server
