@@ -27,3 +27,7 @@ Just copy the 'div' tag in the HTML source of the web page where the user wants 
         </div>
 
 Add the above mentioned 'div' tag at the desired location.
+
+=== Final Project Presentation ===
+
+http://reco-gnizr.googlecode.com/files/Final_Presentation.pdf
