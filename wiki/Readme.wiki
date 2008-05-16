@@ -13,7 +13,7 @@ It also describes how to embed the reco-gnizr web-widget.
  * For installation, follow the instructions on Gnizr wiki page - http://code.google.com/p/gnizr/wiki/HowToInstall
  * Download the Reco-Gnizr sql script. http://reco-gnizr.googlecode.com/files/Reco-Gnizr.txt
  * Run the Reco-Gnizr DB Scripts
- * Download the web archieve file[reco-gnizr.war - http://reco-gnizr.googlecode.com/files/reco-gnizr.war]
+ * Download the web archieve file[reco-gnizr.war - http://reco-gnizr.googlecode.com/files/reco-gnizr-0.3.war]
  * Install the war, by just copying it in the "[Tomcat-home]/webapps/" folder
  * and that's it! start Tomcat server
 
